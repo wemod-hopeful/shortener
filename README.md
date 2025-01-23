@@ -93,5 +93,10 @@ Since batch URLs are processed asynchronously to facilitate large batches, I wan
 
 You can observe this by going to "Bulk Add" in the UI and uploading the 1,000 URL CSV file located at `storage/csv/1000.csv`.
 
+### About my committing my Laravel .env file and built JS
+Ordinarily I would never commit a .env file (other than .env.example), since it typically contains values you want to keep secret, even from a CMS. Similarly, rather than committing built frontend assets to the repo, build processes often takes care of building the assets as part of deployment/CICD. 
+
+I committed both the .env and built JS files in this case to make it as easy as possible for the reviewer to start the application, and only because they contain no keys or other sensitive information.
+
 ## Thank You
 Thank you for taking the time to look over my work! I hope to have an opportunity to discuss it with you.
