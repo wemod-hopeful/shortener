@@ -4,7 +4,7 @@
 
         <div>
             <form @submit.prevent="form.post(route('bulk.store'))">
-                <div>Upload a CSV file containing valid URLs.</div>
+                <div>Upload a CSV file containing valid URLs. (Try using <span class="bg-gray-900 text-white p-2">storage/csv/1000.csv</span>)</div>
                 <input type="file" @input="form.csv = $event.target.files[0]" class="block rounded-md bg-indigo-300 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"/>
                 <div class="text-red-500">{{form.errors.csv}}</div>
                 <progress v-if="form.progress" :value="form.progress.percentage" max="100" class="block mt-4">
