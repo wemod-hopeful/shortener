@@ -75,7 +75,7 @@
                 <pre class="bg-gray-900 text-white p-4 rounded-md overflow-auto">
 {
     "originalUrl": "https://www.wemod.com/maps/horizon-forbidden-west-complete-edition/burning-shores",
-    "shortUrl": "https://{application-host}/go/abc123",
+    "shortUrl": "https://localhost/go/abc123",
     "requestCount": 42,
     "lastRequestedAt": "2025-01-23T16:22:48.000000Z"
 }
@@ -83,17 +83,17 @@
             </section>
 
             <!-- Example Request -->
-            <section>
+            <section class="mb-8">
                 <h3 class="text-xl font-semibold mb-2">Example Request Using Short URL</h3>
                 <pre class="bg-gray-900 text-white p-4 rounded-md overflow-auto">
-https://{application-host}/api/analytics?url=https://{application-host}/go/abc123
+http://localhost/api/analytics?url=http://localhost/go/abc123
 </pre>
             </section>
 
-            <section>
+            <section class="mb-8">
                 <h3 class="text-xl font-semibold mb-2">Example Request Using Original URL</h3>
                 <pre class="bg-gray-900 text-white p-4 rounded-md overflow-auto">
-https://{application-host}/api/analytics?url=https://www.wemod.com/maps/horizon-forbidden-west-complete-edition/burning-shores
+http://localhost/api/analytics?url=https://www.wemod.com/maps/horizon-forbidden-west-complete-edition/burning-shores
 </pre>
             </section>
         </div>

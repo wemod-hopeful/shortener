@@ -84,7 +84,7 @@ I attempted to use the framework and language features to write well engineered 
 - **Leveraging Services with distinct areas of responsibility**
 - **Adding a few tests that prove the analytics endpoint works and that visiting short urls changes the metrics (If I had more time I would test everything else)**
 - **Using ValueObjects to pass non-model data in a structured way**
-- **Using a Custom Validation Rule to ensure users don't attempt to shorten short URLs**
+- **Using a Custom Validation Rule to ensure users don't shorten short URLs**
 - **Creating a UI for the application**
 - **Including API documentation in the application**
 
@@ -92,6 +92,11 @@ I attempted to use the framework and language features to write well engineered 
 Since batch URLs are processed asynchronously to facilitate large batches, I wanted to give the application user an indication of progression through the batch. For a "real" application I would use websockets for this purpose, but for the sake of simplicity I've used polling (which ends once processing is complete) in this case. 
 
 You can observe this by going to "Bulk Add" in the UI and uploading the 1,000 URL CSV file located at `storage/csv/1000.csv`.
+
+### Regarding the Analytics API
+I decided to use a query string for the URL being requested as opposed to a Laravel route parameter so that special characters in the URL don't have to be encoded.
+
+I wrote it so that it can take either a short URL or an original URL as a parameter.
 
 ### About my committing my Laravel .env file and built JS
 Ordinarily I would never commit a .env file (other than .env.example), since it typically contains values you want to keep secret, even from a CMS. Similarly, rather than committing built frontend assets to the repo, build processes often takes care of building the assets as part of deployment/CICD. 
