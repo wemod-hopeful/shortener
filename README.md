@@ -2,19 +2,39 @@
 
 ## How to Run
 
-First, install the application's PHP dependencies via Composer. If you don't have Composer installed, you can find it [here](https://getcomposer.org/)
+1) First, install the application's PHP dependencies via Composer. If you don't have Composer installed, you can find it [here](https://getcomposer.org/)
 
 ```bash
 composer install
 ```
 
-This application uses [Laravel Sail](https://laravel.com/docs/11.x/sail) to simplify running it locally. Laravel Sail requires Docker. If you already have Docker, start the application via
+2) This application uses [Laravel Sail](https://laravel.com/docs/11.x/sail) to simplify running it locally. Laravel Sail requires Docker. If you already have Docker, start the application via
 
 ```bash
-./vendor/bin/sail up
+./vendor/bin/sail up -d
 ```
 
-Once your Laravel Sail environment is up and running, visit the application by navigating to the following url in your browser
+3) Run the migrations to create the required database tables, with or without seeding URLs in the system. (Run one of the following)
+
+With URLs:
+
+```bash
+./vendor/bin/sail artisan migrate --seed
+```
+
+Without URLs:
+
+```bash
+./vendor/bin/sail migrate
+```
+
+4) Ensure you start the Queue Worker so that batch URL uploads will be processed asynchronously
+
+```bash
+./vendor/bin/sail artisan queue:work
+```
+
+5) Once your Laravel Sail environment is up and running, visit the application by navigating to the following url in your browser
 
 [http://localhost](http://localhost)
 
@@ -66,6 +86,7 @@ I attempted to use the framework and language features to write well engineered 
 - **Using ValueObjects to pass non-model data in a structured way**
 - **Using a Custom Validation Rule to ensure users don't attempt to shorten short URLs**
 - **Creating a UI for the application**
+- **Including API documentation in the application**
 
 ### Regarding my use of polling
 Since batch URLs are processed asynchronously to facilitate large batches, I wanted to give the application user an indication of progression through the batch. For a "real" application I would use websockets for this purpose, but for the sake of simplicity I've used polling (which ends once processing is complete) in this case. 

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Url;
+use App\Rules\IsNotShortUrl;
 use Illuminate\Support\Facades\Validator;
 
 class UrlService
@@ -27,11 +28,11 @@ class UrlService
         return route('urls.redirect', ['encodedId' => $encodedId]);
     }
 
-    public function isUrl(string $url): bool
+    public function isValidUrl(string $url): bool
     {
         $validator = Validator::make(
             ['url' => $url],
-            ['url' => 'required|url']
+            ['url' => ['required', 'url', new IsNotShortUrl()]]
         );
 
         if ($validator->fails()) {

@@ -9,4 +9,8 @@ class Url extends Model
     protected $fillable = [
         'original_url',
     ];
+
+    protected $casts = [
+        'last_requested_at' => 'datetime',
+    ];
 }

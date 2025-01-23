@@ -26,7 +26,7 @@ class ShortenUrls implements ShouldQueue
     {
         $this->batch->setTotal(count($this->values));
         foreach ($this->values as $value) {
-            if ($urlService->isUrl($value)) {
+            if ($urlService->isValidUrl($value)) {
                 $encodedId = $urlService->shortenUrl($value);
                 $shortUrl = $urlService->getShortUrlFromEncodedId($encodedId);
                 $this->batch->addSuccess(originalUrl: $value, shortUrl: $shortUrl);

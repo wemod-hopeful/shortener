@@ -21,7 +21,7 @@ class UrlResource extends JsonResource
             'originalUrl' => $this->original_url,
             'shortUrl' => $urlService->getShortUrlFromEncodedId($this->encoded_id),
             'requestCount' => $this->request_count,
-            'lastRequestedAt' => $this->last_requested_at,
+            'lastRequestedAt' => $this->last_requested_at ?? null
         ];
     }
 }

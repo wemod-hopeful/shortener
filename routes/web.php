@@ -19,4 +19,8 @@ Route::get('go/{encodedId}', [UrlController::class, 'redirect'])->name('urls.red
 
 // Handle showing results of batch processing
 Route::get('api/batch/{batchId}', [BatchController::class, 'show'])->name('api.batch.show');
-Route::get('api/analytics/', [AnalyticsController::class, 'show'])->name('api.analytics.show');
+Route::get('api/analytics', [AnalyticsController::class, 'show'])->name('api.analytics.show');
+
+Route::get('docs/api', function() {
+    return Inertia::render('DocsApiIndex');
+})->name('docs.api.index');

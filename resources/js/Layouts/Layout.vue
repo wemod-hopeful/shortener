@@ -56,6 +56,7 @@ const navOptions = [
     { name: 'URLs', routeName: 'urls.index'},
     { name: 'Add URL', routeName: 'urls.create'},
     { name: 'Bulk Add', routeName: 'bulk.create'},
+    { name: 'API', routeName: 'docs.api.index'},
 ]
 const navigation = [];
 navOptions.forEach(option => {
