@@ -6,7 +6,7 @@
                     <div class="relative flex h-16 items-center justify-between lg:border-b lg:border-indigo-400/25">
                         <div class="flex items-center px-2 lg:px-0">
                             <div class="shrink-0">
-                                <img class="block w-1/2" src="https://wemod.com/static/images/wemod-logo-40777eae11.webp" alt="Your Company" />
+                                <Link :href="route('home')"><img class="block w-1/2" src="https://wemod.com/static/images/wemod-logo-40777eae11.webp" alt="Your Company" /></Link>
                             </div>
                             <div class="hidden lg:ml-10 lg:block">
                                 <div class="flex space-x-4">
