@@ -1,5 +1,8 @@
 <p align="center"><a href="https://wemod.com" target="_blank"><img src="https://wemod.com/static/images/wemod-logo-40777eae11.webp" width="100" alt="Laravel Logo"></a></p>
 
+<img width="400" alt="Screenshot 2025-01-23 at 12 13 42 PM" src="https://github.com/user-attachments/assets/1b9c78df-02c0-4839-b5b3-f50fbe151a05" style="display: block;"/>
+
+
 ## How to Run
 
 1) First, install the application's PHP dependencies via Composer. If you don't have Composer installed, you can find it [here](https://getcomposer.org/)
