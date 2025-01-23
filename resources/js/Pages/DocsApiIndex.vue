@@ -84,10 +84,16 @@
 
             <!-- Example Request -->
             <section>
-                <h3 class="text-xl font-semibold mb-2">Example Request</h3>
+                <h3 class="text-xl font-semibold mb-2">Example Request Using Short URL</h3>
                 <pre class="bg-gray-900 text-white p-4 rounded-md overflow-auto">
-GET /api/analytics?url=https://{application-host}/go/abc123 HTTP/1.1
-Host: {application-host}
+https://{application-host}/api/analytics?url=https://{application-host}/go/abc123
+</pre>
+            </section>
+
+            <section>
+                <h3 class="text-xl font-semibold mb-2">Example Request Using Original URL</h3>
+                <pre class="bg-gray-900 text-white p-4 rounded-md overflow-auto">
+https://{application-host}/api/analytics?url=https://www.wemod.com/maps/horizon-forbidden-west-complete-edition/burning-shores
 </pre>
             </section>
         </div>
