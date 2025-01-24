@@ -90,6 +90,7 @@ I attempted to use the framework and language features to write well engineered 
 - **Using a Custom Validation Rule to ensure users don't shorten short URLs**
 - **Creating a UI for the application**
 - **Including API documentation in the application**
+- **Adding appropriate indices to URLs table to facilitate efficient lookups of original and short URLs**
 
 ### Regarding my use of polling
 Since batch URLs are processed asynchronously to facilitate large batches, I wanted to give the application user an indication of progression through the batch. For a "real" application I would use websockets for this purpose, but for the sake of simplicity I've used polling (which ends once processing is complete) in this case. 
